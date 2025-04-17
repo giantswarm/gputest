@@ -10,13 +10,19 @@ global:
     preventDeletion: false
   nodePools:
     nodepool0:
-      availabilityZones: ["us-east-1d", "us-east-1e", "us-east-1f"]
+      availabilityZones:
+        - us-east-1d
+        - us-east-1e
+        - us-east-1f
       instanceType: m5.xlarge
       maxSize: 3
       minSize: 1
       rootVolumeSizeGB: 8
     gpu-worker-pool-1:
-      availabilityZones: ["us-east-1d", "us-east-1e", "us-east-1f"]
+      availabilityZones:
+        - us-east-1d
+        - us-east-1e
+        - us-east-1f
       instanceType: p5.48xlarge
       maxSize: 1
       minSize: 1
