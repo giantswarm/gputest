@@ -21,7 +21,7 @@ spec:
   path: ./
   postBuild:
     substitute:
-      cluster_name: gputest2
+      cluster_name: gputest3
       cluster_release: 0.34.0
       organization: martin
   prune: true
@@ -41,7 +41,7 @@ spec:
   path: ./apps
   postBuild:
     substitute:
-      cluster_name: gputest2
+      cluster_name: gputest3
       organization: martin
   prune: true
   serviceAccountName: automation

@@ -2,41 +2,41 @@ global:
   connectivity:
     network:
       vpcCidr: 10.0.0.0/16
-  subnets:
-    # Control plane nodes subnets
-    - cidrBlocks:
-        - cidr: 10.0.32.0/19
-          availabilityZone: us-east-1d
-        - cidr: 10.0.64.0/19
-          availabilityZone: us-east-1e
-        - cidr: 10.0.96.0/19
-          availabilityZone: us-east-1f
-      isPublic: false
-      tags:
-        subnet.giantswarm.io/role: control-plane
-    # Worker nodes subnets
-    - cidrBlocks:
-        - cidr: 10.0.128.0/19
-          availabilityZone: us-east-1d
-        - cidr: 10.0.160.0/19
-          availabilityZone: us-east-1e
-        - cidr: 10.0.192.0/19
-          availabilityZone: us-east-1f
-      isPublic: false
-      tags:
-        subnet.giantswarm.io/role: workers
-      topology: {}
+    subnets:
+      # Control plane nodes subnets
+      - cidrBlocks:
+          - cidr: 10.0.32.0/19
+            availabilityZone: us-east-1d
+          - cidr: 10.0.64.0/19
+            availabilityZone: us-east-1e
+          - cidr: 10.0.96.0/19
+            availabilityZone: us-east-1f
+        isPublic: false
+        tags:
+          subnet.giantswarm.io/role: control-plane
+      # Worker nodes subnets
+      - cidrBlocks:
+          - cidr: 10.0.128.0/19
+            availabilityZone: us-east-1d
+          - cidr: 10.0.160.0/19
+            availabilityZone: us-east-1e
+          - cidr: 10.0.192.0/19
+            availabilityZone: us-east-1f
+        isPublic: false
+        tags:
+          subnet.giantswarm.io/role: workers
+        topology: {}
 
-    - cidrBlocks:
-        - cidr: 10.0.0.0/24
-          availabilityZone: us-east-1d
-        - cidr: 10.0.1.0/24
-          availabilityZone: us-east-1e
-        - cidr: 10.0.2.0/24
-          availabilityZone: us-east-1f
-      isPublic: true
-      tags:
-        subnet.giantswarm.io/role: gpu-workers
+      - cidrBlocks:
+          - cidr: 10.0.0.0/24
+            availabilityZone: us-east-1d
+          - cidr: 10.0.1.0/24
+            availabilityZone: us-east-1e
+          - cidr: 10.0.2.0/24
+            availabilityZone: us-east-1f
+        isPublic: true
+        tags:
+          subnet.giantswarm.io/role: gpu-workers
 
   controlPlane:
     subnetTags:
