@@ -3,7 +3,7 @@ kind: App
 metadata:
   labels:
     app-operator.giantswarm.io/version: 0.0.0
-  name: gputest
+  name: ${cluster_name}
   namespace: org-${organization}
 spec:
   catalog: cluster
