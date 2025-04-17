@@ -25,6 +25,6 @@ spec:
   namespace: org-martin
   userConfig:
     configMap:
-      name: gputest-userconfig
+      name: ${cluster_name}-userconfig
       namespace: org-martin
   version: ""
