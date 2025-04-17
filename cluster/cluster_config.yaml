@@ -51,6 +51,7 @@ global:
     preventDeletion: false
   nodePools:
     nodepool0:
+      availabilityZones: ["d", "e", "f"]
       instanceType: m5.xlarge
       maxSize: 3
       minSize: 1
@@ -58,6 +59,7 @@ global:
       subnetTags:
         - subnet.giantswarm.io/role: workers
     gpu-worker-pool-1:
+      availabilityZones: ["f"]
       instanceType: p5.48xlarge
       maxSize: 1
       minSize: 1
