@@ -1,0 +1,30 @@
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+    app-operator.giantswarm.io/version: 0.0.0
+  name: gputest
+  namespace: org-martin
+spec:
+  catalog: cluster
+  config:
+    configMap:
+      name: ""
+      namespace: ""
+    secret:
+      name: ""
+      namespace: ""
+  kubeConfig:
+    context:
+      name: ""
+    inCluster: true
+    secret:
+      name: ""
+      namespace: ""
+  name: cluster-aws
+  namespace: org-martin
+  userConfig:
+    configMap:
+      name: gputest-userconfig
+      namespace: org-martin
+  version: ""

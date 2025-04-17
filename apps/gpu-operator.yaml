@@ -1,0 +1,29 @@
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+    giantswarm.io/cluster: ${cluster_name}
+  name: ${cluster_name}-gpu-operator
+  namespace: org-${organization}
+spec:
+  catalog: giantswarm
+  kubeConfig:
+    inCluster: false
+  name: gpu-operator
+  namespace: kube-system
+  version: v0.1.0
+---
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+  giantswarm.io/cluster: ${cluster_name}
+  name: ${cluster_name}-nos
+  namespace: org-${organization}
+spec:
+  catalog: giantswarm
+  kubeConfig:
+    inCluster: false
+  name: nos
+  namespace: kube-system
+  version: v0.1.0

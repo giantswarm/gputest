@@ -1,0 +1,34 @@
+global:
+  connectivity:
+    availabilityZoneUsageLimit: 3
+    network: {}
+    topology: {}
+  controlPlane: {}
+  metadata:
+    name: ${cluster_name}
+    organization: ${organization}
+    preventDeletion: false
+  nodePools:
+    nodepool0:
+      instanceType: m5.xlarge
+      maxSize: 10
+      minSize: 1
+      rootVolumeSizeGB: 8
+    gpu-worker-pool-1:
+      instanceType: p4d.24xlarge
+      maxSize: 1
+      minSize: 1
+      rootVolumeSizeGB: 15
+      instanceWarmup: 600
+      minHealthyPercentage: 90
+      spotInstances:
+        enabled: true
+        maxPrice: 20
+      customNodeTaints:
+        - key: "nvidia.com/gpu"
+          value: "Exists"
+          effect: "NoSchedule"
+  providerSpecific:
+    region: us-east-1
+  release:
+    version: 30.1.0

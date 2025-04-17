@@ -1,0 +1,47 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: gputest
+  namespace: default
+spec:
+  interval: 1m0s
+  ref:
+    branch: main
+  timeout: 60s
+  url: ssh://git@github.com/giantswarm/gputest
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: gputest
+  namespace: default
+spec:
+  interval: 1m
+  path: ./cluster
+  postBuild:
+    substitute:
+      cluster_name: gputest
+      cluster_release: 0.34.0
+      organization: martin
+  prune: true
+  serviceAccountName: automation
+  sourceRef:
+    kind: GitRepository
+    name: gputest
+  timeout: 2m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: gputest-apps
+  namespace: default
+spec:
+  interval: 1m
+  path: ./apps
+  prune: true
+  serviceAccountName: automation
+  sourceRef:
+    kind: GitRepository
+    name: gputest
+  timeout: 2m
