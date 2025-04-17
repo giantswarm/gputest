@@ -23,7 +23,7 @@ global:
       minHealthyPercentage: 90
       spotInstances:
         enabled: true
-        maxPrice: 20
+        maxPrice: 30
       customNodeTaints:
         - key: "nvidia.com/gpu"
           value: "Exists"
