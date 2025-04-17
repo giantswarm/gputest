@@ -4,7 +4,7 @@ metadata:
   labels:
     app-operator.giantswarm.io/version: 0.0.0
   name: gputest
-  namespace: org-martin
+  namespace: org-${organization}
 spec:
   catalog: cluster
   config:
@@ -22,9 +22,9 @@ spec:
       name: ""
       namespace: ""
   name: cluster-aws
-  namespace: org-martin
+  namespace: org-${organization}
   userConfig:
     configMap:
       name: ${cluster_name}-userconfig
-      namespace: org-martin
+      namespace: org-${organization}
   version: ""
