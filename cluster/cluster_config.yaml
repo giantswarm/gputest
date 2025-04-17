@@ -59,7 +59,7 @@ global:
       subnetTags:
         - subnet.giantswarm.io/role: workers
     gpu-worker-pool-1:
-      availabilityZones: ["f"]
+      availabilityZones: ["d", "e", "f"]
       instanceType: p5.48xlarge
       maxSize: 1
       minSize: 1
