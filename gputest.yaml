@@ -39,6 +39,10 @@ metadata:
 spec:
   interval: 1m
   path: ./apps
+  postBuild:
+    substitute:
+      cluster_name: gputest
+      organization: martin
   prune: true
   serviceAccountName: automation
   sourceRef:

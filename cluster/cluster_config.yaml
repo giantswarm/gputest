@@ -11,11 +11,11 @@ global:
   nodePools:
     nodepool0:
       instanceType: m5.xlarge
-      maxSize: 10
+      maxSize: 3
       minSize: 1
       rootVolumeSizeGB: 8
     gpu-worker-pool-1:
-      instanceType: p4d.24xlarge
+      instanceType: p5.48xlarge
       maxSize: 1
       minSize: 1
       rootVolumeSizeGB: 15
