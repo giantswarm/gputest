@@ -4,7 +4,7 @@ global:
       vpcCidr: 10.0.0.0/16
   subnets:
     # Control plane nodes subnets
-    - id: control-plane-nodes
+    - id: control-plane
       cidrBlocks:
         - cidr: 10.0.32.0/19
           availabilityZone: us-east-1d
