@@ -7,11 +7,8 @@ global:
     - id: control-plane-nodes
       cidrBlocks:
         - cidr: 10.0.32.0/19
-          availabilityZone: d
         - cidr: 10.0.64.0/19
-          availabilityZone: e
         - cidr: 10.0.96.0/19
-          availabilityZone: f
       isPublic: false
       tags:
         subnet.giantswarm.io/role: control-plane
@@ -19,11 +16,8 @@ global:
     - id: worker-nodes
       cidrBlocks:
         - cidr: 10.0.128.0/19
-          availabilityZone: d
         - cidr: 10.0.160.0/19
-          availabilityZone: e
         - cidr: 10.0.192.0/19
-          availabilityZone: f
       isPublic: false
       tags:
         subnet.giantswarm.io/role: workers
@@ -32,11 +26,8 @@ global:
     - id: gpu-workers
       cidrBlocks:
         - cidr: 10.0.0.0/24
-          availabilityZone: d
         - cidr: 10.0.1.0/24
-          availabilityZone: e
         - cidr: 10.0.2.0/24
-          availabilityZone: f
       isPublic: true
       tags:
         subnet.giantswarm.io/role: gpu-workers
