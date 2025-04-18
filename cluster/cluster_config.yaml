@@ -26,10 +26,6 @@ global:
           subnet.giantswarm.io/role: gpu-workers
 
   controlPlane:
-    availabilityZones:
-      - us-east-1d
-      - us-east-1e
-      - us-east-1f
     subnetTags:
       - subnet.giantswarm.io/role: control-plane
   metadata:
