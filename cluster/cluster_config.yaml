@@ -21,7 +21,6 @@ global:
             availabilityZone: e
           - cidr: 10.0.2.0/24
             availabilityZone: f
-        id: gpu-workers
         isPublic: true
         tags:
           subnet.giantswarm.io/role: gpu-workers
