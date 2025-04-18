@@ -53,4 +53,4 @@ global:
   providerSpecific:
     region: us-east-1
   release:
-    version: ${release}
+    version: "${release}"
