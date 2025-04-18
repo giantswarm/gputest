@@ -32,4 +32,4 @@ spec:
       namespace: org-${organization}
   name: nos
   namespace: kube-system
-  version: v0.1.1
+  version: v0.1.2
