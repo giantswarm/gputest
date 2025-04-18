@@ -6,9 +6,9 @@ global:
       # Control plane nodes subnets
       - cidrBlocks:
           - cidr: 10.0.32.0/19
-            availabilityZone: d
+            availabilityZone: b
           - cidr: 10.0.64.0/19
-            availabilityZone: e
+            availabilityZone: d
           - cidr: 10.0.96.0/19
             availabilityZone: f
         isPublic: false
@@ -16,9 +16,9 @@ global:
           subnet.giantswarm.io/role: control-plane
       - cidrBlocks:
           - cidr: 10.0.0.0/24
-            availabilityZone: d
+            availabilityZone: b
           - cidr: 10.0.1.0/24
-            availabilityZone: e
+            availabilityZone: d
           - cidr: 10.0.2.0/24
             availabilityZone: f
         isPublic: true
@@ -35,8 +35,8 @@ global:
   nodePools:
     nodepool0:
       availabilityZones:
+        - us-east-1b
         - us-east-1d
-        - us-east-1e
         - us-east-1f
       instanceType: m5.xlarge
       maxSize: 3
@@ -46,8 +46,7 @@ global:
         - subnet.giantswarm.io/role: workers
     gpu-worker-pool-1:
       availabilityZones:
-        - us-east-1d
-        - us-east-1e
+        - us-east-1b
         - us-east-1f
       instanceType: p5.48xlarge
       maxSize: 1
