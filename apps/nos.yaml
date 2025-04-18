@@ -1,9 +1,10 @@
+---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
   labels:
     giantswarm.io/cluster: ${cluster_name}
-  name: ${cluster_name}-gpu-operator
+  name: ${cluster_name}-nos
   namespace: org-${organization}
 spec:
   catalog: giantswarm
@@ -12,6 +13,6 @@ spec:
     secret:
       name: ${cluster_name}-kubeconfig
       namespace: org-${organization}
-  name: gpu-operator
+  name: nos
   namespace: kube-system
-  version: v0.1.0
+  version: v0.1.2

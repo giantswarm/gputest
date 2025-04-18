@@ -1,27 +1,15 @@
 ---
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
-metadata:
-  name: gputest
-  namespace: default
-spec:
-  interval: 1m0s
-  ref:
-    branch: main
-  timeout: 60s
-  url: https://github.com/giantswarm/gputest
----
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: gputest
+  name: gputest-apps
   namespace: default
 spec:
   interval: 1m
-  path: ./
+  path: ./apps
   postBuild:
     substitute:
-      cluster_name: gputest3
+      cluster_name: ${cluster_name}
       organization: martin
   prune: true
   serviceAccountName: automation

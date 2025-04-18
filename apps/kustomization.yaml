@@ -1,0 +1,3 @@
+resources:
+  - gpu-operator.yaml
+  #- nos.yaml

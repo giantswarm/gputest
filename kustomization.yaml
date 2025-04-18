@@ -1,3 +1,4 @@
 resources:
   - gputest.yaml
+  - gputest-apps.yaml
   - cluster
