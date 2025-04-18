@@ -11,6 +11,14 @@ global:
           - cidr: 10.0.96.0/19
             availabilityZone: f
         isPublic: false
+      - cidrBlocks:
+          - cidr: 10.0.0.0/24
+            availabilityZone: b
+          - cidr: 10.0.1.0/24
+            availabilityZone: d
+          - cidr: 10.0.2.0/24
+            availabilityZone: f
+        isPublic: true
   metadata:
     name: ${cluster_name}
     organization: ${organization}
@@ -45,4 +53,4 @@ global:
   providerSpecific:
     region: us-east-1
   release:
-    version: 30.1.0
+    version: ${release}
