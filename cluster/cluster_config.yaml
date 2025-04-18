@@ -3,7 +3,6 @@ global:
     network:
       vpcCidr: 10.0.0.0/16
     subnets:
-      # Control plane nodes subnets
       - cidrBlocks:
           - cidr: 10.0.32.0/19
             availabilityZone: b
@@ -12,22 +11,6 @@ global:
           - cidr: 10.0.96.0/19
             availabilityZone: f
         isPublic: false
-        tags:
-          subnet.giantswarm.io/role: control-plane
-      - cidrBlocks:
-          - cidr: 10.0.0.0/24
-            availabilityZone: b
-          - cidr: 10.0.1.0/24
-            availabilityZone: d
-          - cidr: 10.0.2.0/24
-            availabilityZone: f
-        isPublic: true
-        tags:
-          subnet.giantswarm.io/role: gpu-workers
-
-  controlPlane:
-    subnetTags:
-      - subnet.giantswarm.io/role: control-plane
   metadata:
     name: ${cluster_name}
     organization: ${organization}
@@ -42,8 +25,6 @@ global:
       maxSize: 3
       minSize: 1
       rootVolumeSizeGB: 8
-      subnetTags:
-        - subnet.giantswarm.io/role: workers
     gpu-worker-pool-1:
       availabilityZones:
         - us-east-1b
@@ -61,8 +42,6 @@ global:
         - key: "nvidia.com/gpu"
           value: "Exists"
           effect: "NoSchedule"
-      subnetTags:
-        - subnet.giantswarm.io/role: gpu-workers
   providerSpecific:
     region: us-east-1
   release:
