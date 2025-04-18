@@ -22,7 +22,7 @@ spec:
   postBuild:
     substitute:
       cluster_name: gputest3
-      release: 30.1.0
+      release: "30.1.0"
       organization: martin
   prune: true
   serviceAccountName: automation
