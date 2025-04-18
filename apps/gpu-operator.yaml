@@ -9,6 +9,9 @@ spec:
   catalog: giantswarm
   kubeConfig:
     inCluster: false
+    secret:
+      name: ${cluster_name}-kubeconfig
+      namespace: org-${organization}
   name: gpu-operator
   namespace: kube-system
   version: v0.1.0
@@ -24,6 +27,9 @@ spec:
   catalog: giantswarm
   kubeConfig:
     inCluster: false
+    secret:
+      name: ${cluster_name}-kubeconfig
+      namespace: org-${organization}
   name: nos
   namespace: kube-system
   version: v0.1.0
