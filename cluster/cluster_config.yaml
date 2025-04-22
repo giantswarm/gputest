@@ -40,7 +40,7 @@ global:
       instanceType: p5.48xlarge
       maxSize: 1
       minSize: 1
-      rootVolumeSizeGB: 15
+      rootVolumeSizeGB: 30
       instanceWarmup: 600
       minHealthyPercentage: 90
       spotInstances:
