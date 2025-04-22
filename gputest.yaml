@@ -21,7 +21,7 @@ spec:
   path: ./
   postBuild:
     substitute:
-      cluster_name: gputest
+      cluster_name: gputest1
       organization: martin
   prune: true
   serviceAccountName: automation
