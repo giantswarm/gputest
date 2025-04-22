@@ -36,7 +36,7 @@ global:
     gpu-worker-pool-1:
       availabilityZones:
         - us-east-1b
-        # - us-east-1d
+        - us-east-1f
       instanceType: p5.48xlarge
       maxSize: 1
       minSize: 1
